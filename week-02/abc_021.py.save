@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+
+import sys
+
+line = sys.stdin
+line = line.strip().split(" ")
+i = 0
+print(line)
+while i < len(line):
+  curr = i
+
+  j = i + 1
+  while i < len(line):
+    if line[j] < line[i]:
+      curr = j
+    j += 1
+
+  tmp = line[i]
+  line[i] = line[curr]
+  line[curr] = tmp
+
+  i += 1
+print(line)
+dict = { "A": line[2],
+         "B": line[1],
+         "C": line[0],}
